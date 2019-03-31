@@ -1,16 +1,10 @@
-#variable "lambda_function_filename" {
-#  default 	= "lambda-files/url-shortener-redirect-short-url-lambda.zip"
-#  description 	= "Name of the zip file we will upload as the lambda"
-#  type 		= "string"
-#}
-
 variable "lambda_s3_bucket" {
   description   = "Name of the S3 bucket where we want to store our code"
   type          = "string"
 }
 
 variable "lambda_s3_key" {
-  default       = "redirectshorturl-0.0.1-SNAPSHOT.jar"
+#  default       = "redirectshorturl-0.0.1-SNAPSHOT.jar"
   description   = "Object key of the S3 bucket where we want to store our code"
   type          = "string"
 }
