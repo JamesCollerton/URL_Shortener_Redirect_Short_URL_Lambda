@@ -4,7 +4,6 @@ variable "lambda_s3_bucket" {
 }
 
 variable "lambda_s3_key" {
-#  default       = "redirectshorturl-0.0.1-SNAPSHOT.jar"
   description   = "Object key of the S3 bucket where we want to store our code"
   type          = "string"
 }
