@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class URLShortenerImpl implements URLShortener {
+public class ShortURLRedirectorImpl implements ShortURLRedirector {
 
     @Autowired
     URLHasher urlHasher;
@@ -15,12 +15,11 @@ public class URLShortenerImpl implements URLShortener {
     @Override
     public Optional<ShortenedURLInformation> apply(ShortenedURLInformation shortenedURLInformation) {
 
-        Optional<String> longUrl = Optional.of(shortenedURLInformation.getLongUrl());
+        Optional<String> shortUrl = Optional.of(shortenedURLInformation.getShortUrl());
 
         // Still needs DB step
-        return longUrl
-                .map(urlHasher)
-                .map(s -> new ShortenedURLInformation(longUrl.get(), s));
+        return shortUrl
+                .map(s -> new ShortenedURLInformation("https://www.google.com/maps", s));
 
     }
 

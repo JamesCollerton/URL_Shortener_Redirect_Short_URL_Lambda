@@ -11,9 +11,9 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 public class ShortenedURLInformation {
 
-    @NotEmpty(message = "{longUrl.notEmpty}")
     private String longUrl;
 
+    @NotEmpty(message = "{shortUrl.notEmpty}")
     private String shortUrl;
 
 }

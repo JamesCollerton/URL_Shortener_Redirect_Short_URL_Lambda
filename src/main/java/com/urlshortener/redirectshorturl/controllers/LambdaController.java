@@ -1,7 +1,7 @@
 package com.urlshortener.redirectshorturl.controllers;
 
 import com.urlshortener.redirectshorturl.models.ShortenedURLInformation;
-import com.urlshortener.redirectshorturl.services.URLShortener;
+import com.urlshortener.redirectshorturl.services.ShortURLRedirector;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,13 +19,13 @@ import java.util.Optional;
 public class LambdaController {
 
     @Autowired
-    private URLShortener urlShortener;
+    private ShortURLRedirector shortUrlRedirector;
 
     @PostMapping
     public ResponseEntity<ShortenedURLInformation> get(
             @Validated @RequestBody ShortenedURLInformation shortenedURLInformation
     ) {
-        Optional<ShortenedURLInformation> response = urlShortener.apply(shortenedURLInformation);
+        Optional<ShortenedURLInformation> response = shortUrlRedirector.apply(shortenedURLInformation);
 
         return response.map(ResponseEntity::ok).orElse(ResponseEntity.badRequest().build());
     }
