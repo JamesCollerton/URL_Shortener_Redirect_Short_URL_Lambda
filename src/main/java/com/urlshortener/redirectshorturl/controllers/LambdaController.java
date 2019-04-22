@@ -1,13 +1,12 @@
-package com.urlshortener.createshorturl.controllers;
+package com.urlshortener.redirectshorturl.controllers;
 
-import com.urlshortener.createshorturl.models.ShortenedURLInformation;
-import com.urlshortener.createshorturl.services.URLShortener;
+import com.urlshortener.redirectshorturl.models.ShortenedURLInformation;
+import com.urlshortener.redirectshorturl.services.URLShortener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

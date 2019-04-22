@@ -1,4 +1,4 @@
-package com.urlshortener.createshorturl;
+package com.urlshortener.redirectshorturl;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

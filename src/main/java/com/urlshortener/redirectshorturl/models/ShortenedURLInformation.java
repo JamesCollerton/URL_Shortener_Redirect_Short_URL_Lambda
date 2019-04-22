@@ -1,4 +1,4 @@
-package com.urlshortener.createshorturl.models;
+package com.urlshortener.redirectshorturl.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

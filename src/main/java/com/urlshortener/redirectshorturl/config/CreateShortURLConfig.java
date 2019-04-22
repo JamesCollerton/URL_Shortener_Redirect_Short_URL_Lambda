@@ -1,6 +1,6 @@
-package com.urlshortener.createshorturl.config;
+package com.urlshortener.redirectshorturl.config;
 
-import com.urlshortener.createshorturl.controllers.LambdaController;
+import com.urlshortener.redirectshorturl.controllers.LambdaController;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 

@@ -1,6 +1,6 @@
-package com.urlshortener.createshorturl.services;
+package com.urlshortener.redirectshorturl.services;
 
-import com.urlshortener.createshorturl.models.ShortenedURLInformation;
+import com.urlshortener.redirectshorturl.models.ShortenedURLInformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

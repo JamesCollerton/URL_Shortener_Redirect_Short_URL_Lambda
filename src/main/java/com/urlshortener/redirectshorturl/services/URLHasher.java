@@ -1,4 +1,4 @@
-package com.urlshortener.createshorturl.services;
+package com.urlshortener.redirectshorturl.services;
 
 import java.util.function.Function;
 

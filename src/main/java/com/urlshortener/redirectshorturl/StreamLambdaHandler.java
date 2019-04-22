@@ -1,4 +1,4 @@
-package com.urlshortener.createshorturl;
+package com.urlshortener.redirectshorturl;
 
 import com.amazonaws.serverless.exceptions.ContainerInitializationException;
 import com.amazonaws.serverless.proxy.model.AwsProxyRequest;
@@ -17,7 +17,7 @@ public class StreamLambdaHandler implements RequestStreamHandler {
 
     static {
         try {
-            handler = SpringBootLambdaContainerHandler.getAwsProxyHandler(CreateshorturlApplication.class);
+            handler = SpringBootLambdaContainerHandler.getAwsProxyHandler(RedirectshorturlApplication.class);
         } catch (ContainerInitializationException e) {
             // if we fail here. We re-throw the exception to force another cold start
             e.printStackTrace();

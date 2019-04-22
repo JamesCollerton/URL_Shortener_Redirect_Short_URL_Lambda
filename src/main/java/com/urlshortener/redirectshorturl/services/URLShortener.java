@@ -1,6 +1,6 @@
-package com.urlshortener.createshorturl.services;
+package com.urlshortener.redirectshorturl.services;
 
-import com.urlshortener.createshorturl.models.ShortenedURLInformation;
+import com.urlshortener.redirectshorturl.models.ShortenedURLInformation;
 
 import java.util.Optional;
 import java.util.function.Function;
