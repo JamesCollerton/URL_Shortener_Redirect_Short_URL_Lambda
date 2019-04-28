@@ -6,5 +6,5 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import({ LambdaController.class })
-public class RedirectShortURLConfig {
+public class RedirectShortUrlConfig {
 }
