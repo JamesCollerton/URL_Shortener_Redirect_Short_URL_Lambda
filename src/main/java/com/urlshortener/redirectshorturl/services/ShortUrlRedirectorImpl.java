@@ -16,15 +16,9 @@ public class ShortUrlRedirectorImpl implements ShortUrlRedirector {
     @Override
     public Optional<ShortenedUrlInformation> apply(ShortenedUrlInformation shortenedUrlInformation) {
 
-//        Optional<ShortenedUrlInformation> storedUrlInformation = shortenedUrlInformationRepository.findByShortUrl(
-//                shortenedUrlInformation.getShortUrl()
-//        );
-
-        Optional<String> shortUrl = Optional.of(shortenedUrlInformation.getShortUrl());
-
-        // Still needs DB step
-        return shortUrl
-                .map(s -> new ShortenedUrlInformation("id", "https://www.google.com/maps", s));
+        return shortenedUrlInformationRepository.findByShortUrl(
+                shortenedUrlInformation.getShortUrl()
+        );
 
     }
 
