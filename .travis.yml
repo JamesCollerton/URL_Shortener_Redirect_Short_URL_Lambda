@@ -11,7 +11,7 @@ script:
   - TODAY=`date '+%Y_%m_%d_%H_%M_%S'`
   - JAR_NAME="lamba-$TODAY.jar"
   - aws s3 ls s3://java-8-test-lambda-code-bucket
-  - aws s3 cp ./target/redirectshorturl-0.0.1-SNAPSHOT.jar s3://java-8-test-lambda-code-bucket/"$JAR_NAME" --sse
-  - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-1:257777415217:function:Java8TestLambda --s3-bucket java-8-test-lambda-code-bucket --s3-key "$JAR_NAME" --region eu-west-1
+  - aws s3 cp ./target/redirectshorturl-0.0.1-SNAPSHOT.jar s3://dev-redirect-short-url-lambda-code-bucket/"$JAR_NAME" --sse
+  - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-1:257777415217:function:dev-url-shortener-redirect-short-url-lambda --s3-bucket dev-redirect-short-url-lambda-code-bucket --s3-key "$JAR_NAME" --region eu-west-1
 after_success:
   - bash <(curl -s https://codecov.io/bash)
