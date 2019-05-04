@@ -24,7 +24,6 @@ import java.util.Optional;
 @RequestMapping("/**")
 public class LambdaController {
 
-
     @Autowired
     private ShortUrlRedirector shortUrlRedirector;
 
