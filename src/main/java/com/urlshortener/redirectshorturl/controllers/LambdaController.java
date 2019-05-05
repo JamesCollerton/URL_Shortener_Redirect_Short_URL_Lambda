@@ -10,31 +10,35 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.xml.ws.Response;
 import java.util.Optional;
+import java.util.UUID;
 
 @Controller
 @Slf4j
-@RequestMapping("/**")
+@RequestMapping("/shortened-url-information/{short-url}/**")
 public class LambdaController {
 
     @Autowired
     private ShortUrlRedirector shortUrlRedirector;
 
-    @PostMapping
+    @GetMapping
     public RedirectView get(
-            @Validated @RequestBody ShortenedUrlInformation shortenedUrlInformation
+            @PathVariable("short-url") String shortUrl
     ) {
-        Optional<ShortenedUrlInformation> response = shortUrlRedirector.apply(shortenedUrlInformation);
+        String uuid = UUID.randomUUID().toString();
+
+        log.info(String.format("%s Received request with path parameter %s", uuid, shortUrl));
+
+        Optional<ShortenedUrlInformation> response = shortUrlRedirector.apply(shortUrl);
+
+        log.info(String.format("%s Returning response %s", uuid, response));
 
         return response.map(ShortenedUrlInformation::getLongUrl).map(RedirectView::new).orElseThrow(
-                () -> new ResourceNotFoundException(shortenedUrlInformation.getShortUrl())
+                () -> new ResourceNotFoundException(shortUrl)
         );
     }
 

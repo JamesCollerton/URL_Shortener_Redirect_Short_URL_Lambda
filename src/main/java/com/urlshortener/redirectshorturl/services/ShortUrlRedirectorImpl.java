@@ -2,11 +2,13 @@ package com.urlshortener.redirectshorturl.services;
 
 import com.urlshortener.redirectshorturl.models.ShortenedUrlInformation;
 import com.urlshortener.redirectshorturl.repositories.ShortenedUrlInformationRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class ShortUrlRedirectorImpl implements ShortUrlRedirector {
 
@@ -14,11 +16,11 @@ public class ShortUrlRedirectorImpl implements ShortUrlRedirector {
     ShortenedUrlInformationRepository shortenedUrlInformationRepository;
 
     @Override
-    public Optional<ShortenedUrlInformation> apply(ShortenedUrlInformation shortenedUrlInformation) {
+    public Optional<ShortenedUrlInformation> apply(String shortUrl) {
 
-        return shortenedUrlInformationRepository.findByShortUrl(
-                shortenedUrlInformation.getShortUrl()
-        );
+        log.info(String.format("Redirecting for shortUrl %s", shortUrl));
+
+        return shortenedUrlInformationRepository.findByShortUrl(shortUrl);
 
     }
 

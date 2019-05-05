@@ -5,8 +5,8 @@ import com.urlshortener.redirectshorturl.models.ShortenedUrlInformation;
 import java.util.Optional;
 import java.util.function.Function;
 
-public interface ShortUrlRedirector extends Function<ShortenedUrlInformation, Optional<ShortenedUrlInformation>> {
+public interface ShortUrlRedirector extends Function<String, Optional<ShortenedUrlInformation>> {
 
-    Optional<ShortenedUrlInformation> apply(ShortenedUrlInformation shortenedUrlInformation);
+    Optional<ShortenedUrlInformation> apply(String shortUrl);
 
 }
