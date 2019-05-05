@@ -40,11 +40,11 @@ public class DynamoDBConfigLive {
         return new BasicAWSCredentials(amazonAWSAccessKey, amazonAWSSecretKey);
     }
 
-    @Bean
-    public DynamoDBMapperConfig dynamoDBMapperConfig() {
-        log.info("Creating dynamo DB mapper config in live profile");
-        return DynamoDBMapperConfig.DEFAULT;
-    }
+//    @Bean
+//    public DynamoDBMapperConfig dynamoDBMapperConfig() {
+//        log.info("Creating dynamo DB mapper config in live profile");
+//        return DynamoDBMapperConfig.DEFAULT;
+//    }
 
     @Bean
     public DynamoDBMapper dynamoDBMapper(AmazonDynamoDB amazonDynamoDB, DynamoDBMapperConfig config) {
