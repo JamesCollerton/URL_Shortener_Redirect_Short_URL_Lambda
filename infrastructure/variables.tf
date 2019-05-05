@@ -20,6 +20,18 @@ variable "lambda_function_handler" {
   type 		= "string"
 }
 
+variable "lambda_memory_size" {
+  default 	= "1024"
+  description   = "The amount of memory to allocate for the lambda"
+  type          = "string"
+}
+
+variable "lambda_timeout" {
+  variable 	= "30"
+  description   = "The amount of time before we want to conside the lambda timed out"
+  type          = "string"
+}
+
 variable "iam_for_lambda_arn" {
   description   = "ARN for the IAM role for the lambda"
   type 		= "string"
