@@ -27,7 +27,7 @@ variable "lambda_memory_size" {
 }
 
 variable "lambda_timeout" {
-  variable 	= "30"
+  default 	= "30"
   description   = "The amount of time before we want to conside the lambda timed out"
   type          = "string"
 }
