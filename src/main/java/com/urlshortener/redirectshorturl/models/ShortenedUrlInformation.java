@@ -13,6 +13,7 @@ import javax.validation.constraints.NotEmpty;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+// TODO: Pull this from the config file
 @DynamoDBTable(tableName = "dev-url-shortener-short-urls")
 public class ShortenedUrlInformation {
 
