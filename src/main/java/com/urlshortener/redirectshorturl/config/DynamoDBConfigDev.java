@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.util.StringUtils;
 
 @Slf4j
-@Profile("!default")
+@Profile("default")
 @Configuration
 @EnableDynamoDBRepositories
         (basePackages = "com.urlshortener.redirectshorturl.repositories")
