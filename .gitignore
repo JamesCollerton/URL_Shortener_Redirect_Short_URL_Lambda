@@ -24,8 +24,10 @@
 /nbdist/
 /.nb-gradle/
 
-### Terraform ###
+### Spring ###
+application-local.properties
 
+### Terraform ###
 .terraform
 *.tfstate
 *.tfstate.backup
