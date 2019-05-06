@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 @Slf4j
-//@Profile("default")
+@Profile("default")
 @Configuration
 @EnableDynamoDBRepositories(basePackageClasses = ShortenedUrlInformationRepository.class)
 public class DynamoDBConfigLive {
